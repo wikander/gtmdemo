@@ -1,7 +1,7 @@
 document.getElementById("one").addEventListener("click", () => {
   console.info("btn #one");
   window.dataLayer.push({
-    event: "btn #one",
+    event: "btn-#one",
     myData: {
       name: "John Doe",
       age: 30,
