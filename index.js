@@ -16,6 +16,10 @@ document
     });
   });
 
+function dataLayerPush(data) {
+  window.dataLayer.push(data);
+  console.info("datalayer push", data);
+}
 document.querySelectorAll("[data-gtm-id]").forEach((el) => {
   const gtmId = `${el.getAttribute("data-gtm-id")}`;
   setButtonName(el, gtmId);
@@ -25,11 +29,12 @@ document.querySelectorAll("[data-gtm-id]").forEach((el) => {
     const event = `btn-#${gtmId}`;
     switch (gtmId) {
       case "one":
-        window.dataLayer.push({
+        dataLayerPush({
           event,
           myData: {
             name: "John Doe",
             age: 30,
+            gender: "male",
             city: "New York",
             state: "NY",
             children: ["Anna", "Lena"],
@@ -37,12 +42,11 @@ document.querySelectorAll("[data-gtm-id]").forEach((el) => {
         });
         break;
       case "two":
-        window.dataLayer.push({
+        dataLayerPush({
           event,
           myData: {
             name: "Jane Doe",
             age: 35,
-            gender: "female",
             city: "Los Angeles",
             children: ["AnnaLena"],
           },

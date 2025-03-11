@@ -1,0 +1,14 @@
+# Google Tag Manager & Google Analytics
+
+## Google Tag Manager
+1. https://tagmanager.google.com/
+2. Kallas GTM
+3. Använder "the data layer", datalagret: https://developers.google.com/tag-platform/tag-manager/datalayer
+4. I kod "används" GTM genom att göra en push till datalagret, `window.datalayer.push({event: "test", ... } )`
+5. Ett ställe att hantera all datainsamling. 
+6. Väldigt flexibelt, gjort för att kunna göra saker utan hjälp av utvecklare.
+   
+## Google Analytics 4
+1. https://analytics.google.com/
+2. Kallas GA4
+3. Tar emot event från GTM. Lagrar datat, används för analys.
