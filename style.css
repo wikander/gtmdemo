@@ -1,3 +1,7 @@
+button:hover {
+  outline: 5px solid orange;
+}
+
 .btn-container {
   display: flex;
   flex-direction: row;
