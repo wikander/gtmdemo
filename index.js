@@ -1,8 +1,10 @@
+const dataLayerContainer = document.getElementById("datalayer-container");
+
 const buttonTimesClicked = new Map();
 
 document.getElementById("btn-datalayer-reset").addEventListener("click", () => {
   console.info("datalayer reset");
-  dataLayer.push(function () {
+  window.dataLayer.push(function () {
     this.reset();
   });
 });
@@ -11,14 +13,15 @@ document
   .getElementById("btn-datalayer-set-null")
   .addEventListener("click", () => {
     console.info("datalayer set myData to null");
-    dataLayer.window.dataLayer.push(function () {
+    window.dataLayer.push(function () {
       this.set("myData", null);
     });
   });
 
 function dataLayerPush(data) {
-  window.dataLayer.push(data);
+  window.dataLayer.push(Object.assign({}, data));
   console.info("datalayer push", data);
+  dataLayerContainer.textContent = JSON.stringify(data, null, 2);
 }
 document.querySelectorAll("[data-gtm-id]").forEach((el) => {
   const gtmId = `${el.getAttribute("data-gtm-id")}`;

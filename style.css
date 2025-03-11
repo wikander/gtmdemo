@@ -2,6 +2,11 @@ button:hover {
   outline: 5px solid orange;
 }
 
+pre {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
 .btn-container {
   display: flex;
   flex-direction: row;
